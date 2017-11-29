@@ -22,6 +22,9 @@ function [ stress, direction ] = fn_principle_stress_3d( sig_x, sig_y, sig_z, ta
 % NOTES
 % 
 
+%%Sams notes:
+
+
 %% Begin Method
 % Assmeble Matrix
 A = [sig_x, tau_xy, tau_zx; tau_xy, sig_y, tau_yz; tau_zx, tau_yz, sig_z];
