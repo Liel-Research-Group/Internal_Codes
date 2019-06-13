@@ -1,0 +1,27 @@
+Eric Johnson
+Liel Research Group
+Zalachoris-Rathje 2019 GMPE
+
+The following Matlab files apply the ground motion prediction equation preseneted in "Ground Motion Model for Small-to-Moderate Earthquakes 
+in Texas, Oklahoma, and Kansas" (2019) by Georgios Zalachoris and Ellen M. Rathje. The equation presented in this paper is dependent on 
+"Referenced Empirical Ground-Motion Model for Eastern North America" (2015) by Behzad Hasani and Gail M. Atkinson which is dependent on
+"NGA-West2 Equations for Predicting PGA, PGV, and 5% Damped PSA for Shallow Crustal Earthquakes" (2014) by David M. Boore, Jonathan P. Stewart, 
+Emel Seyhan, and Gail M. Atkinson. 
+
+This GMPE is only valid for Mw 3.0 - Mw 5.8.
+
+The ZR19.m is the main file to run and is dependent on the following files:
+   ZR_19.mat, HA_15.m, HA_15.mat, BSSA_14.m, and BSSA_14.mat
+
+The .m files are the individual GMPEs and the .mat files are their coefficients as presented in the papers for each
+
+Inputs required are:
+	siteprop.Rjb (epicentral distance)
+	siteprop.VS30(shear wave velocity in the top 30 m)
+	siteprop.T (Period of analysis, for PGA set T = 0, for PGV set T = -1)
+	faultprop.M (Moment magnitude of event)
+	faultprop.d (Depth of event)
+
+The spectral acceleration (in g) will be outputted at the period of analysis will be outputted unless T is set to 0 or -1.
+For T = 0, PGA (in g) will be outputted.
+For T = -1, PGV (in cm/s) will be outputted.
